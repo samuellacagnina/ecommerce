@@ -11,16 +11,16 @@ function Menu() {
   };
 
   return (
-    <div>
+    <div className='max-h-6'>
       <button
         onClick={handleMenu}
         className="md:hidden"
       >
         <FontAwesomeIcon icon={faBurger} />
       </button>
-
+    <div className='sm:w-full md:w-0'>
       <ul
-        className={`flex space-x-2 font-bold text-sm ${
+        className={`md:flex space-x-2 font-bold text-sm ${
           isOpen ? 'block ' : 'hidden md:flex'
         }`}
       >
@@ -40,6 +40,7 @@ function Menu() {
           <Link href="/">Go Pro</Link>
         </li>
       </ul>
+      </div>
     </div>
   );
 }

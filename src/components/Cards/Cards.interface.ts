@@ -1,4 +1,5 @@
 interface CardsProps {
+  userId: number;
   title: string;
   subTitle: string;
 }

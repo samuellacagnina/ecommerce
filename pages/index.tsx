@@ -1,34 +1,55 @@
-import type { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Header from '../src/components/header/Header';
 import Cards from '../src/components/Cards/Cards';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-const Home: NextPage = () => {
-  const [data, setData] = useState([]);
+interface PostProps {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
 
-  useEffect(() => {
-    fetchingData();
-  });
+interface HomeProps {
+  data: PostProps[];
+}
 
-  const fetchingData = async () => {
-    try {
-      const data = await fetch('https://jsonplaceholder.typicode.com/posts');
-      const response = await data.json();
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+const Home: NextPage<HomeProps> = ({ data }) => {
+  const [postData, setPostData] = useState<PostProps[]>(data);
 
   return (
     <div className="w-full">
       <Header />
-      <Cards
-        title="Title"
-        subTitle="subTitle"
-      />
+      <div className="grid grid-cols-4">
+        {postData.map((post) => (
+          <Cards
+            userId={post.userId}
+            title={post.title}
+            subTitle={post.body}
+          />
+        ))}
+      </div>
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data: PostProps[] = await response.json();
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
 };
 
 export default Home;

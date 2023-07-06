@@ -5,14 +5,16 @@ import SearchBar from './searchBar/SearchBar';
 
 function Header() {
   return (
-    <div className="flex p-8 justify-between items-center w-full">
-      <Menu />
-      <Logo />
-      <div className="flex space-x-6 items-center">
-        <SearchBar />
-        <Profile />
+    <>
+      <div className="flex p-8 justify-between items-center w-full">
+        <Menu />
+        <Logo />
+        <div className="flex space-x-6 items-center">
+          <SearchBar />
+          <Profile />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

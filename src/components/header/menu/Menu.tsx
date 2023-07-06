@@ -11,36 +11,36 @@ function Menu() {
   };
 
   return (
-    <div className='max-h-6'>
+    <div className="max-h-6 border border-red-600">
       <button
         onClick={handleMenu}
         className="md:hidden"
       >
         <FontAwesomeIcon icon={faBurger} />
       </button>
-    <div className='sm:w-full md:w-0'>
-      <ul
-        className={`md:flex space-x-2 font-bold text-sm ${
-          isOpen ? 'block ' : 'hidden md:flex'
-        }`}
-      >
-        <li>
-          <Link href="/">Find Talent</Link>
-        </li>
-        <li>
-          <Link href="/about">For Designers</Link>
-        </li>
-        <li>
-          <Link href="/">Inspiration</Link>
-        </li>
-        <li>
-          <Link href="/">Learn Design</Link>
-        </li>
-        <li className="text-pink-400">
-          <Link href="/">Go Pro</Link>
-        </li>
-      </ul>
-      </div>
+      <nav className="w-full border border-red-950">
+        <ul
+          className={`md:flex w-full absolute space-x-2 font-bold text-sm ${
+            isOpen ? 'block ' : 'hidden md:flex'
+          }`}
+        >
+          <li>
+            <Link href="/">Find Talent</Link>
+          </li>
+          <li>
+            <Link href="/about">For Designers</Link>
+          </li>
+          <li>
+            <Link href="/">Inspiration</Link>
+          </li>
+          <li>
+            <Link href="/">Learn Design</Link>
+          </li>
+          <li className="text-pink-400">
+            <Link href="/">Go Pro</Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

@@ -25,6 +25,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         {postData.map((post) => (
           <Cards
           key={post.id}
+            id={post.id}
             title={post.title}
             url={post.url}
           />

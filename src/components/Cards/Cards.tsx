@@ -3,7 +3,7 @@ import CardsProps from './Cards.interface';
 import Image from 'next/image';
 
 
-function Cards({ title, url }: CardsProps) {
+function Cards({ title, url, id }: CardsProps) {
   const [isHover, setIsHover] = useState(false);
   const handleHover = () => {
     setIsHover(true);

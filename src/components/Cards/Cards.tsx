@@ -1,10 +1,9 @@
 import React from 'react';
 import CardsProps from './Cards.interface';
 
-function Cards({ title, subTitle, userId,id }: CardsProps) {
+function Cards({ title, subTitle }: CardsProps) {
   return (
-    <div key={id} className="border border-red-400 ">
-      <p>{userId}</p>
+    <div className="border border-red-400 rounded-md">
       <p>{title}</p>
       <p>{subTitle}</p>
     </div>

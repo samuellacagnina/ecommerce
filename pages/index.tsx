@@ -21,12 +21,10 @@ const Home: NextPage<HomeProps> = ({ data }) => {
   return (
     <div className="w-full">
       <Header />
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-4 gap-9 pr-16 pl-16">
         {postData.map((post) => (
           <Cards
           key={post.id}
-            id={post.id}
-            userId={post.userId}
             title={post.title}
             subTitle={post.body}
           />

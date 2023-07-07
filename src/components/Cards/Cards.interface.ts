@@ -1,6 +1,6 @@
 interface CardsProps {
   title: string
-  subTitle: string
+  url: string
 }
 
 export default CardsProps

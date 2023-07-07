@@ -8,7 +8,7 @@ interface PostProps {
   userId: number;
   id: number;
   title: string;
-  body: string;
+  url: string;
 }
 
 interface HomeProps {
@@ -26,7 +26,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
           <Cards
           key={post.id}
             title={post.title}
-            subTitle={post.body}
+            url={post.url}
           />
         ))}
       </div>
@@ -36,7 +36,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const response = await fetch('https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5');
     const data: PostProps[] = await response.json();
     return {
       props: {

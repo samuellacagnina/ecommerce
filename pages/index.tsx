@@ -24,6 +24,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       <div className="grid grid-cols-4">
         {postData.map((post) => (
           <Cards
+          key={post.id}
             id={post.id}
             userId={post.userId}
             title={post.title}

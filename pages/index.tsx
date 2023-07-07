@@ -2,6 +2,7 @@ import { GetServerSideProps, NextPage } from 'next';
 import Header from '../src/components/header/Header';
 import Cards from '../src/components/Cards/Cards';
 import { useState } from 'react';
+import { openStdin } from 'process';
 
 interface PostProps {
   userId: number;
@@ -23,6 +24,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       <div className="grid grid-cols-4">
         {postData.map((post) => (
           <Cards
+            id={post.id}
             userId={post.userId}
             title={post.title}
             subTitle={post.body}

@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import CardsProps from './Cards.interface';
 import { CardsFooter } from '../CardsFooter/CardsFooter';
-
 import Image from 'next/image';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Cards({ title, url, id }: CardsProps) {
+  console.log(id);
   const [isHover, setIsHover] = useState(false);
-  const handleHover = () => {
+  const [idCard, setIdCard] = useState(null);
+
+  const handleMouseEnter = () => {
     setIsHover(true);
+    // Updates the id of the card hover
   };
 
   const handleMouseLeave = () => {
@@ -20,7 +23,7 @@ function Cards({ title, url, id }: CardsProps) {
     <div>
       <div
         className="border border-red-400 rounded-md"
-        onMouseEnter={handleHover}
+        onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <Image
@@ -44,6 +47,7 @@ function Cards({ title, url, id }: CardsProps) {
             color="red"
           />
         }
+        id={id}
       />
     </div>
   );

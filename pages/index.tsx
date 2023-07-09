@@ -2,8 +2,6 @@ import { GetServerSideProps, NextPage } from 'next';
 import Header from '../src/components/header/Header';
 import Cards from '../src/components/Cards/Cards';
 import { useState } from 'react';
-import { CardsFooter } from '../src/components/CardsFooter/CardsFooter';
-import { openStdin } from 'process';
 
 interface PostProps {
   userId: number;

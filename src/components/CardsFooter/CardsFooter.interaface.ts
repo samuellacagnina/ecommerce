@@ -1,6 +1,6 @@
 interface CardsFooterProps {
-  icon: string;
-  votes: number;
+  id: number;
+  icon: React.ReactNode;
 }
 
 export default CardsFooterProps;

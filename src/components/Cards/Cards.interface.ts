@@ -1,7 +1,7 @@
 interface CardsProps {
-  id: number
-  title: string
-  url: string
+  id: any;
+  title: string;
+  url: string;
 }
 
-export default CardsProps
+export default CardsProps;

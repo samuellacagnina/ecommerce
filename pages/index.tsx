@@ -2,6 +2,7 @@ import { GetServerSideProps, NextPage } from 'next';
 import Header from '../src/components/header/Header';
 import Cards from '../src/components/Cards/Cards';
 import { useState } from 'react';
+import { CardsFooter } from '../src/components/CardsFooter/CardsFooter';
 import { openStdin } from 'process';
 
 interface PostProps {
@@ -24,7 +25,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       <div className="grid grid-cols-4 gap-9 pr-16 pl-16">
         {postData.map((post) => (
           <Cards
-          key={post.id}
+            key={post.id}
             id={post.id}
             title={post.title}
             url={post.url}
@@ -37,7 +38,9 @@ const Home: NextPage<HomeProps> = ({ data }) => {
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5');
+    const response = await fetch(
+      'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5'
+    );
     const data: PostProps[] = await response.json();
     return {
       props: {

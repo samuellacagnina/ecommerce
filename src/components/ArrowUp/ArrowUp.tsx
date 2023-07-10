@@ -3,7 +3,10 @@ import { faArrowUpLong } from '@fortawesome/free-solid-svg-icons';
 import React from 'react'
 
 export const ArrowUp = () => {
+  const ScrollTop = () => {
+    window.scrollTo({top:0, behavior:'smooth'})
+  }
   return (
-    <div className=""><FontAwesomeIcon icon={faArrowUpLong} /></div>
+    <div className="flex justify-end" onClick={ScrollTop}><FontAwesomeIcon style={{height:'2rem'}} icon={faArrowUpLong} /></div>
   )
 }

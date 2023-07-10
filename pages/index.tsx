@@ -3,6 +3,7 @@ import Header from '../src/components/header/Header';
 import { ArrowUp } from '../src/components/ArrowUp/ArrowUp';
 import Cards from '../src/components/Cards/Cards';
 import { useState } from 'react';
+import { Footer } from '../src/components/Footer/Footer';
 
 interface PostProps {
   userId: number;
@@ -27,7 +28,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
   return (
     <div className="w-full">
       <Header />
-      <div className="grid grid-cols-4 gap-9 pr-16 pl-16">
+      <div className="grid gap-9 pr-16 pl-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {postData.map((post) => (
           <Cards
             key={post.id}
@@ -41,6 +42,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
         ))}
       </div>
       <ArrowUp />
+      <Footer />
     </div>
   );
 };

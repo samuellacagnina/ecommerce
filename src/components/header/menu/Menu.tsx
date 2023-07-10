@@ -11,14 +11,14 @@ function Menu() {
   };
 
   return (
-    <div className="max-h-6 border border-red-600">
+    <div className="max-h-6">
       <button
         onClick={handleMenu}
         className="md:hidden"
       >
         <FontAwesomeIcon icon={faBurger} />
       </button>
-      <nav className="w-full border border-red-950">
+      <nav className="w-full">
         <ul
           className={`md:flex w-full absolute space-x-2 font-bold text-sm ${
             isOpen ? 'block ' : 'hidden md:flex'

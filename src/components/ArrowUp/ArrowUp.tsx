@@ -7,6 +7,6 @@ export const ArrowUp = () => {
     window.scrollTo({top:0, behavior:'smooth'})
   }
   return (
-    <div className="flex justify-end" onClick={ScrollTop}><FontAwesomeIcon style={{height:'2rem'}} icon={faArrowUpLong} /></div>
+    <div className="flex justify-end cursor-pointer" onClick={ScrollTop}><FontAwesomeIcon style={{height:'2rem'}} icon={faArrowUpLong} /></div>
   )
 }

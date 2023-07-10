@@ -1,29 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import CardsFooterProps from './CardsFooter.interaface';
+import { LikeCardsFooter } from './LikeCardsFooter/LikeCardsFooter';
+import { ViewCardsFooter } from './ViewCardsFooter/VIewCardsFooter';
 
-export const CardsFooter = ({ icon, id }: CardsFooterProps) => {
-  const [vote, setVote] = useState(0);
 
-  const incrementVote = () => {
-    setVote((vote) => vote + 1);
-  };
+export const CardsFooter = ({ icon, id, view }: CardsFooterProps) => {
 
-  useEffect(() => {
-    const voteStored = localStorage.getItem(`votes_${id}`);
-    console.log(voteStored);
-    if (voteStored) {
-      setVote(parseInt(voteStored));
-    }
-  }, [id]);
-
-  useEffect(() => {
-    localStorage.setItem(`votes_${id}`, vote.toString());
-  }, [vote, id]);
-
-  return (
-    <div>
-      <button onClick={incrementVote}>{icon}</button>
-      <span className="ml-2">{vote}</span>
+ return (
+    <div className="flex">
+      <LikeCardsFooter icon={icon} id={id} />
+      <ViewCardsFooter  view={view}/>
     </div>
   );
 };

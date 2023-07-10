@@ -1,6 +1,7 @@
 interface CardsFooterProps {
-  id: number;
-  icon: React.ReactNode;
+  id?: number
+  icon?: React.ReactNode
+  view?: any
 }
 
-export default CardsFooterProps;
+export default CardsFooterProps

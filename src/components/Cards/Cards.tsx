@@ -5,14 +5,13 @@ import Image from 'next/image';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Cards({ title, url, id }: CardsProps) {
-  console.log(id);
+function Cards({ title, url, id,view,handleView }: CardsProps) {
+
   const [isHover, setIsHover] = useState(false);
-  const [idCard, setIdCard] = useState(null);
 
   const handleMouseEnter = () => {
     setIsHover(true);
-    // Updates the id of the card hover
+
   };
 
   const handleMouseLeave = () => {
@@ -25,6 +24,7 @@ function Cards({ title, url, id }: CardsProps) {
         className="rounded-md relative"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onClick={handleView}
       >
         <Image
           src={url}
@@ -46,6 +46,7 @@ function Cards({ title, url, id }: CardsProps) {
           />
         }
         id={id}
+        view={view}
       />
     </div>
   );

@@ -8,6 +8,7 @@ interface PostProps {
   id: number;
   title: string;
   url: string;
+
 }
 
 interface HomeProps {
@@ -16,6 +17,11 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ data }) => {
   const [postData, setPostData] = useState<PostProps[]>(data);
+  const[view,setView] = useState(0)  // Increment View
+
+  const handleView = () => {
+    setView(view => view + 1)
+  }
 
   return (
     <div className="w-full">
@@ -27,6 +33,9 @@ const Home: NextPage<HomeProps> = ({ data }) => {
             id={post.id}
             title={post.title}
             url={post.url}
+            view={view}
+            handleView={handleView}
+
           />
         ))}
       </div>

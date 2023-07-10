@@ -1,5 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next';
 import Header from '../src/components/header/Header';
+import { ArrowUp } from '../src/components/ArrowUp/ArrowUp';
 import Cards from '../src/components/Cards/Cards';
 import { useState } from 'react';
 
@@ -39,6 +40,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
           />
         ))}
       </div>
+      <ArrowUp />
     </div>
   );
 };
@@ -46,7 +48,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   try {
     const response = await fetch(
-      'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=5'
+      'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=25'
     );
     const data: PostProps[] = await response.json();
     return {

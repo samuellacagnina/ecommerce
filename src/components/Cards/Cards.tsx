@@ -11,8 +11,7 @@ function Cards({ title, url, id,view,handleView }: CardsProps) {
 
   const handleMouseEnter = () => {
     setIsHover(true);
-
-  };
+};
 
   const handleMouseLeave = () => {
     setIsHover(false);

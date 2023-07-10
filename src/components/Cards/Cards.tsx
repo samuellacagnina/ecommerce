@@ -22,7 +22,7 @@ function Cards({ title, url, id }: CardsProps) {
   return (
     <div>
       <div
-        className="border border-red-400 rounded-md"
+        className="rounded-md relative"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -32,13 +32,11 @@ function Cards({ title, url, id }: CardsProps) {
           width={500}
           height={500}
         />
-        <div className="card-content">
-          {isHover ? (
-            <div className="hover-content">
-              <h3>{title}</h3>
-            </div>
-          ) : null}
-        </div>
+        {isHover && (
+          <h3 className="absolute inset-0 flex text-white font-bold">
+            {title}
+          </h3>
+        )}
       </div>
       <CardsFooter
         icon={

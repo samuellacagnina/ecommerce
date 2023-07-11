@@ -4,6 +4,7 @@ import { ArrowUp } from '../src/components/ArrowUp/ArrowUp';
 import Cards from '../src/components/Cards/Cards';
 import { useState } from 'react';
 import { Footer } from '../src/components/Footer/Footer';
+import { LoadMoreButton } from '../src/components/LoadMoreButton/LoadMoreButton';
 
 interface PostProps {
   userId: number;
@@ -20,6 +21,8 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ data }) => {
   const [postData, setPostData] = useState<PostProps[]>(data);
   const[view,setView] = useState(0)  // Increment View
+  const[itemsToShow,setItemsToShow] = useState(28)
+  console.log(itemsToShow);
 
   const handleView = () => {
     setView(view => view + 1)
@@ -41,6 +44,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
           />
         ))}
       </div>
+      <LoadMoreButton itemsToShow={itemsToShow} />
       <ArrowUp />
       <Footer />
     </div>
@@ -50,7 +54,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   try {
     const response = await fetch(
-      'https://jsonplaceholder.typicode.com/photos?_start=0&_limit=25'
+      `https://jsonplaceholder.typicode.com/photos?_start=0&_limit=28`
     );
     const data: PostProps[] = await response.json();
     return {

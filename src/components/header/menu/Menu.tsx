@@ -28,7 +28,7 @@ function Menu() {
             <Link href="/">Find Talent</Link>
           </li>
           <li>
-            <Link href="/about">For Designers</Link>
+            <Link href="/designers">For Designers</Link>
           </li>
           <li>
             <Link href="/">Inspiration</Link>

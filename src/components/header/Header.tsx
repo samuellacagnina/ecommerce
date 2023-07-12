@@ -1,7 +1,7 @@
 import Logo from './logo/Logo';
 import Menu from './menu/Menu';
-import Profile from './profile/Profile';
 import SearchBar from './searchBar/SearchBar';
+import Profile from './profile/Profile';
 
 function Header() {
   return (

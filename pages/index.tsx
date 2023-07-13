@@ -20,12 +20,18 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ data }) => {
   const [postData, setPostData] = useState<PostProps[]>(data);
   const[view,setView] = useState(0)  // Increment View
-  const[itemsToShow,setItemsToShow] = useState(28)
-  console.log(itemsToShow);
 
-  const handleView = () => {
-    setView(view => view + 1)
-  }
+  const handleView = async () => {
+    try {
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/photos?_start=${postData.length}&_limit=10`
+      );
+      const newData: PostProps[] = await response.json();
+      setPostData([...postData, ...newData]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="w-full">
@@ -42,7 +48,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
           />
         ))}
       </div>
-      <LoadMoreButton itemsToShow={itemsToShow} />
+      <LoadMoreButton handleView={handleView}/>
       <ArrowUp />
       <Footer />
     </div>

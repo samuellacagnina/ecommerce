@@ -1,5 +1,5 @@
 interface LoadMoreButtonProps {
-  itemsToShow: number
+  handleView: () => Promise<void>
 }
 
 export default LoadMoreButtonProps

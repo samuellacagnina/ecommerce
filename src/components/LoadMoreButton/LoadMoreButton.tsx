@@ -5,7 +5,7 @@ interface CardData {
     
 }
 
-export const LoadMoreButton = ({itemsToShow}:LoadMoreButtonProps) => {
+export const LoadMoreButton = ({handleView}:LoadMoreButtonProps) => {
     const [itemToShow, setItemToShow] = useState(28); // Imposta il numero iniziale di cards da mostrare
     const [cardsData, setCardsData] = useState<CardData[]>([]);
     
@@ -26,8 +26,7 @@ export const LoadMoreButton = ({itemsToShow}:LoadMoreButtonProps) => {
 
   return (
     <div className="flex justify-center font-bold">
-        <button className='bg-[#f4f5fb] px-14 py-4 rounded-lg' onClick={loadMoreItems}>Load more Shots</button>
-        <p>{ itemToShow }</p>
+        <button className='bg-[#f4f5fb] px-14 py-4 rounded-lg' onClick={handleView}>Load more Shots</button>
     </div>
   )
 }

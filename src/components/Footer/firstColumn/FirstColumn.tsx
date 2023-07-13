@@ -1,4 +1,4 @@
-import Logo from "../../header/logo/Logo"
+import Logo from "../../Header/Logo/Logo"
 import { SocialIcons } from "./socialIcons/SocialIcons"
 
 export const FirstColumn = () => {

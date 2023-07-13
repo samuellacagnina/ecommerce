@@ -1,7 +1,8 @@
-import Logo from './logo/Logo';
-import Menu from './menu/Menu';
-import SearchBar from './searchBar/SearchBar';
-import Profile from './profile/Profile';
+import Logo from '../Header/Logo/Logo';
+import Menu from '../Header/Menu/Menu';
+import SearchBar from '../Header/SearchBar/SearchBar';
+import Profile from '../Header/Profile/Profile';
+
 
 function Header() {
   return (
@@ -12,6 +13,7 @@ function Header() {
         <div className="flex space-x-6 items-center">
           <SearchBar />
           <Profile />
+          
         </div>
       </div>
     </>

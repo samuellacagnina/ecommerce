@@ -57,7 +57,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
     const data: PostProps[] = await response.json();
     return {
       props: {
-        data,
+        data: data.slice(0, 25)
       },
     };
   } catch (error) {

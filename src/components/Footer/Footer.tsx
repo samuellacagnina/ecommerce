@@ -1,19 +1,16 @@
-import { FirstColumn } from "./firstColumn/FirstColumn"
-import { SecondColumn } from "./secondColumn/SecondColumn"
+import footerData from '../../../data/footer.json';
 
 export const Footer = () => {
-    return(
-        <div className="flex gap-36 px-8 sm:flex">
-            <div className="w-1/4">
-            <FirstColumn />
-            </div>
-            <div className="flex gap-16">
-            <SecondColumn/>
-            <SecondColumn/>
-            <SecondColumn/>
-            <SecondColumn/>
-            <SecondColumn/>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="flex gap-36 px-8 sm:flex">
+      {footerData.map((data, index) => {
+        return (
+          <div key={index}>
+            <h3>{data.title}</h3>
+            <p>{data.links.text}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+};

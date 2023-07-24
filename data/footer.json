@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Column 1",
+    "links": [
+      { "text": "Link 1", "url": "/link1" },
+      { "text": "Link 2", "url": "/link2" },
+      { "text": "Link 3", "url": "/link3" }
+    ]
+  },
+  {
+    "title": "Column 2",
+    "links": [
+      { "text": "Link 4", "url": "/link4" },
+      { "text": "Link 5", "url": "/link5" },
+      { "text": "Link 6", "url": "/link6" }
+    ]
+  },
+  {
+    "title": "Column 3",
+    "links": [
+      { "text": "Link 7", "url": "/link7" },
+      { "text": "Link 8", "url": "/link8" },
+      { "text": "Link 9", "url": "/link9" }
+    ]
+  },
+  {
+    "title": "Column 4",
+    "links": [
+      { "text": "Link 10", "url": "/link10" },
+      { "text": "Link 11", "url": "/link11" },
+      { "text": "Link 12", "url": "/link12" }
+    ]
+  },
+  {
+    "title": "Column 5",
+    "links": [
+      { "text": "Link 13", "url": "/link13" },
+      { "text": "Link 14", "url": "/link14" },
+      { "text": "Link 15", "url": "/link15" }
+    ]
+  },
+  {
+    "title": "Column 6",
+    "links": [
+      { "text": "Link 16", "url": "/link16" },
+      { "text": "Link 17", "url": "/link17" },
+      { "text": "Link 18", "url": "/link18" }
+    ]
+  }
+]

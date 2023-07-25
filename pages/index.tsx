@@ -11,6 +11,7 @@ interface PostProps {
   id: number
   title: string
   url: string
+  view:any
 }
 
 interface HomeProps {
@@ -20,6 +21,7 @@ interface HomeProps {
 const Home: NextPage<HomeProps> = ({ data }) => {
   const [postData, setPostData] = useState<PostProps[]>(data)
   const [view, setView] = useState(0)
+  const [isAscending, setIsAscending] = useState(true);
 
   const handleView = async () => {
     try {
@@ -32,10 +34,25 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       console.log(error)
     }
   }
+    const sortCardsByLikes = (data: PostProps[], isAscending: boolean) => {
+      const sortedData = [...data].sort((a, b) => {
+        if (isAscending) {
+          return a.view - b.view;
+        } else {
+          return b.view - a.view; 
+        }
+      });
+      return sortedData;
+    };
+    const handleSort = () => {
+      const sortedData = sortCardsByLikes(postData, isAscending);
+      setPostData(sortedData);
+      setIsAscending(!isAscending); 
+    };
 
   return (
     <div className="w-full">
-      <ButtonPopular />
+      <ButtonPopular isAscending={isAscending} handleSort={handleSort} />
       <div className="grid gap-9 pr-16 pl-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {postData.map((post) => (
           <Cards

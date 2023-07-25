@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { useState, ChangeEvent } from 'react';
 
@@ -40,7 +41,7 @@ const SignIn = () => {
             placeholder="Insert Password"
             onChange={handlePassword}
           />
-          <button>Sign in</button>
+          <Link href="/login">Sign In</Link>
         </div>
       )}
     </div>

@@ -10,3 +10,4 @@ export const Designers = () => {
 };
 
 export default Designers;
+

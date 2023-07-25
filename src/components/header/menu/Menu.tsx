@@ -25,7 +25,8 @@ function Menu() {
           }`}
         >
           <li>
-            <Link href="/">Find Talent</Link>
+            <Link as="div" href="/">Find Talent</Link>
+              
           </li>
           <li>
             <Link href="/designers">For Designers</Link>

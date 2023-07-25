@@ -2,7 +2,7 @@ import Logo from './Logo/Logo';
 import Menu from '../Header/Menu/Menu';
 import SearchBar from '../Header/SearchBar/SearchBar';
 import Profile from '../Header/Profile/Profile';
-import SignIn from '../SignIn/SignIn';
+import SignIn from './SignIn/SignIn';
 
 function Header() {
   return (

@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const ProfileBox = () => {
     return(
-        <div className="w-1/4 border border-black p-6 z-50">
+        <div className="absolute top-full right-1 z-10 border border-black flex flex-col p-4">
             <div className="flex flex-col justify-center items-center">
             <Link href="/">
                 <img className="w-12 rounded-full" src="https://cdn.dribbble.com/assets/default_avatars/avatar-5-2e44c34bf198d3364e3a2647e6add7c33bbc29dc60153cec761468427d0e435b.png" alt="" />

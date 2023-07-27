@@ -1,10 +1,12 @@
+import Link from 'next/link';
 import React from 'react';
 import { useState, ChangeEvent } from 'react';
+import { useAuthContext } from '../../../context/AuthContext';
 
 const SignIn = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
+
+  const{handleUserName,userName} = useAuthContext()
 
   const handleSignIn = () => {
     setIsOpen(true);
@@ -14,17 +16,8 @@ const SignIn = () => {
     setIsOpen(false)
   }
 
-  const handleUserName = (e: ChangeEvent<HTMLInputElement>) => {
-    const user = e.target.value;
-    setUserName(user);
-    
-  };
-  console.log("username:", userName);
-  const handlePassword = (e: ChangeEvent<HTMLInputElement>) => {
-    const psw = e.target.value;
-    setPassword(psw);
-    console.log(password);
-  };
+  console.log('UserName in SignIn component:', userName);
+
 
   return (
     <div
@@ -38,14 +31,14 @@ const SignIn = () => {
           <input
             type="text"
             placeholder="UserName"
+            value={userName}
             onChange={handleUserName}
           />
           <input
             type="password"
             placeholder="Insert Password"
-            onChange={handlePassword}
           />
-          <button>Sign in</button>
+          <Link href="/login">Sign In</Link>
         </div>
       )}
     </div>

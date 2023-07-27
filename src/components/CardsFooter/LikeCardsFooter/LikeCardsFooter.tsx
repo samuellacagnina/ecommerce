@@ -7,7 +7,6 @@ export const LikeCardsFooter = ({icon,id}:CardsFooterProps) => {
     
     useEffect(() => {
         const voteStored = localStorage.getItem(`votes_${id}`);
-        console.log(voteStored);
         if (voteStored) {
           setVote(parseInt(voteStored));
         }

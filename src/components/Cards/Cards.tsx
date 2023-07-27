@@ -34,7 +34,7 @@ function Cards({ title, url, id,view,handleView }: CardsProps) {
           height={500}
         />
         {isHover && (
-          <h3 className="absolute inset-0 flex text-white font-bold">
+          <h3 className="absolute inset-0 flex text-white font-bold items-end text-xl p-8">
             {title}
           </h3>
         )}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ButtonPopularProps from "./ButtonPopular.interface";
 
-export const ButtonPopular = ({isAscending,handleSort}:ButtonPopularProps) => {
+export const ButtonPopular = () => {
 
 
 

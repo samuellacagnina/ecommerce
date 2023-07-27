@@ -5,11 +5,11 @@ import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-  <Layout>
-    <AuthProvider>
+  <AuthProvider>
+    <Layout>
       <Component {...pageProps} />
-    </AuthProvider>
-  </Layout>
+    </Layout>
+  </AuthProvider>
   )
 }
 

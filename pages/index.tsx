@@ -34,25 +34,10 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       console.log(error)
     }
   }
-    const sortCardsByLikes = (data: PostProps[], isAscending: boolean) => {
-      const sortedData = [...data].sort((a, b) => {
-        if (isAscending) {
-          return a.view - b.view;
-        } else {
-          return b.view - a.view; 
-        }
-      });
-      return sortedData;
-    };
-    const handleSort = () => {
-      const sortedData = sortCardsByLikes(postData, isAscending);
-      setPostData(sortedData);
-      setIsAscending(!isAscending); 
-    };
-
+  
   return (
     <div className="w-full">
-      <ButtonPopular isAscending={isAscending} handleSort={handleSort} />
+      <ButtonPopular />
       <div className="grid gap-9 pr-16 pl-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {postData.map((post) => (
           <Cards

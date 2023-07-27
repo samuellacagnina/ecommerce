@@ -6,7 +6,8 @@ import { useAuthContext } from '../../../context/AuthContext';
 const SignIn = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const{handleUserName,userName} = useAuthContext()
+  const{handleUserName} = useAuthContext()
+
 
   const handleSignIn = () => {
     setIsOpen(true);
@@ -16,10 +17,7 @@ const SignIn = () => {
     setIsOpen(false)
   }
 
-  console.log('UserName in SignIn component:', userName);
-
-
-  return (
+ return (
     <div
       className="relative"
       onMouseEnter={handleSignIn}
@@ -31,7 +29,7 @@ const SignIn = () => {
           <input
             type="text"
             placeholder="UserName"
-            value={userName}
+            
             onChange={handleUserName}
           />
           <input

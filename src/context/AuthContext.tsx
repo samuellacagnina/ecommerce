@@ -19,9 +19,8 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
   const handleUserName = (e: ChangeEvent<HTMLInputElement>) => {
     const user = e.target.value;
     setUserName(user);
+    console.log(user);
   };
-
-  console.log(handleUserName);
   
   return(
     <AuthContext.Provider value={{userName, setUserName, password, setPassword,handleUserName}}>

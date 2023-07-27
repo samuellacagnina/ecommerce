@@ -36,7 +36,7 @@ const Home: NextPage<HomeProps> = ({ data }) => {
   }
   
   return (
-    <div className="w-full">
+    <div className="relative min-h-full">
       <ButtonPopular />
       <div className="grid gap-9 pr-16 pl-16 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {postData.map((post) => (
@@ -52,7 +52,6 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       </div>
       <LoadMoreButton handleView={handleView} />
       <ArrowUp />
-      <Footer />
     </div>
   )
 }

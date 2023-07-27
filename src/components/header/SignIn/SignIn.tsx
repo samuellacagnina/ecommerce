@@ -25,7 +25,7 @@ const SignIn = () => {
     >
       <p>Sign In</p>
       {isOpen && (
-        <div className="absolute top-full left-0 z-10 border border-r-purple-800 flex flex-col p-4">
+        <div className="absolute top-full right-2 z-10 border border-r-purple-800 flex flex-col p-4 gap-4 w-80 h-70 bg-[#fff]">
           <input
             type="text"
             placeholder="UserName"

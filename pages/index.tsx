@@ -1,40 +1,40 @@
-import { GetServerSideProps, NextPage } from "next"
-import { ArrowUp } from "../src/components/ArrowUp/ArrowUp"
-import Cards from "../src/components/Cards/Cards"
-import { useState } from "react"
-import { Footer } from "../src/components/Footer/Footer"
-import { LoadMoreButton } from "../src/components/LoadMoreButton/LoadMoreButton"
-import { ButtonPopular } from "../src/components/ButtonPopular/ButtonPopular"
+import { GetServerSideProps, NextPage } from 'next';
+import { ArrowUp } from '../src/components/ArrowUp/ArrowUp';
+import Cards from '../src/components/Cards/Cards';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { LoadMoreButton } from '../src/components/LoadMoreButton/LoadMoreButton';
+import { ButtonPopular } from '../src/components/ButtonPopular/ButtonPopular';
+import { PopUp } from '../src/components/PopUp/PopUp';
 
 interface PostProps {
-  userId: number
-  id: number
-  title: string
-  url: string
-  view:any
+  userId: number;
+  id: number;
+  title: string;
+  url: string;
+  view: any;
 }
 
 interface HomeProps {
-  data: PostProps[]
+  data: PostProps[];
 }
 
 const Home: NextPage<HomeProps> = ({ data }) => {
-  const [postData, setPostData] = useState<PostProps[]>(data)
-  const [view, setView] = useState(0)
-  const [isAscending, setIsAscending] = useState(true);
+  const [postData, setPostData] = useState<PostProps[]>(data);
+  const [view, setView] = useState(0);
+  const [showPopup, setShowPopup] = useState<boolean>(false);
 
   const handleView = async () => {
     try {
       const response = await fetch(
         `https://jsonplaceholder.typicode.com/photos?_start=${postData.length}&_limit=10`
-      )
-      const newData: PostProps[] = await response.json()
-      setPostData([...postData, ...newData])
+      );
+      const newData: PostProps[] = await response.json();
+      setPostData([...postData, ...newData]);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-  
+  };
+
   return (
     <div className="relative min-h-full">
       <ButtonPopular />
@@ -53,28 +53,28 @@ const Home: NextPage<HomeProps> = ({ data }) => {
       <LoadMoreButton handleView={handleView} />
       <ArrowUp />
     </div>
-  )
-}
+  );
+};
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   try {
     const response = await fetch(
       `https://jsonplaceholder.typicode.com/photos?_start=0&_limit=28`
-    )
-    const data: PostProps[] = await response.json()
+    );
+    const data: PostProps[] = await response.json();
     return {
       props: {
         data: data.slice(0, 5),
       },
-    }
+    };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return {
       props: {
         data: [],
       },
-    }
+    };
   }
-}
+};
 
-export default Home
+export default Home;

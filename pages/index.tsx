@@ -1,10 +1,9 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { ArrowUp } from '../src/components/ArrowUp/ArrowUp';
 import Cards from '../src/components/Cards/Cards';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { LoadMoreButton } from '../src/components/LoadMoreButton/LoadMoreButton';
 import { ButtonPopular } from '../src/components/ButtonPopular/ButtonPopular';
-import { PopUp } from '../src/components/PopUp/PopUp';
 
 interface PostProps {
   userId: number;

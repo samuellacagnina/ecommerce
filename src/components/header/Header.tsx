@@ -3,11 +3,12 @@ import Menu from '../Header/Menu/Menu';
 import SearchBar from '../Header/SearchBar/SearchBar';
 import Profile from '../Header/Profile/Profile';
 import SignIn from './SignIn/SignIn';
+import { Banner } from '../Banner/Banner';
 
 function Header() {
   return (
     <>
-      <div className="flex p-8 justify-between items-center w-full">
+      <div className="flex p-8 justify-between items-center w-full border border-red-500">
         <Menu />
         <Logo />
 
